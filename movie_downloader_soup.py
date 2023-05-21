@@ -23,7 +23,7 @@ found = False
 
 for link in soup.find_all('a'):
     if movie_name in link.text:
-        new_url = urljoin(base_url + '/', link['href'])
+        new_url = urljoin(f'{base_url}/', link['href'])
         print(f"If you are searching the web series click on this link {new_url}")
         response = requests.get(new_url)
         soup = BeautifulSoup(response.content, 'html.parser')
